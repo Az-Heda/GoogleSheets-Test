@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.min.js"></script>
+</head>
+<body>
+	<script>
+		const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRtG4IEQgnKB155eYzz5Zl5_QKtLOFLBjgridLLLjObptXWtEVLOYsCanWG-EGaRmBO_gTZXZu3Q631/pub?output=tsv';
+
+		(async function refreshData() {
+			console.count('Testing...')
+			window['dw'] = await dfd.readCSV(url, { delimiter: '\t' });
+			// setTimeout(refreshData, 1000 * 60 * 5)
+		})();
+	</script>
+</body>
+</html>
